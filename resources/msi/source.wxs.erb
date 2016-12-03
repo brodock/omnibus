@@ -106,5 +106,14 @@
     <WixVariable Id="WixUIInfoIco" Value="Resources\assets\project_32x32.ico" />
     <WixVariable Id="WixUINewIco" Value="Resources\assets\project_16x16.ico" />
     <WixVariable Id="WixUIUpIco" Value="Resources\assets\project_16x16.ico" />
+
+    <!--
+      Set registry key for install location
+      HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{GUID}\InstallLocation
+    -->
+    <SetProperty Id="ARPINSTALLLOCATION"
+                 Value="[TARGETDIR]"
+                 After="CostFinalize" />
+
   </Product>
 </Wix>
